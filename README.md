@@ -1,116 +1,41 @@
-Skip to content
-Navigation Menu
-sathish-git-tech
-Frequency-Division-Multiplexing---Modulation-and-Demodulation-using-Python
+# Frequency-Division-Multiplexing---Modulation-and-Demodulation-using-Python
 
-Type / to search
-Code
-Pull requests
-Actions
-Projects
-Security
-Insights
-You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork pavandeep22/Frequency-Division-Multiplexing---Modulation-and-Demodulation-using-Python, so you can send a pull request.
-Frequency-Division-Multiplexing---Modulation-and-Demodulation-using-Python
-/
-README.md
-in
-main
+# __Aim__:
 
-Edit
+To generate an FDM signal by multiplexing multiple baseband message signals on different carrier frequencies, transmit (sum) them, optionally add channel noise, then recover each message by bandpass filtering and coherent demodulation in Python (Google Colab). Observe time & frequency domain signals and measure recovery quality.
 
-Preview
-Indent mode
 
-Spaces
-Indent size
+# __Apparatus Required__:
 
-4
-Line wrap mode
+Google Colab (or any Python environment)
 
-Soft wrap
-Editing README.md file contents
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
+Python libraries: numpy, matplotlib, scipy (scipy.signal)
 
+
+# __Theory__:
+
+FDM places different message signals in separate, non-overlapping frequency bands by modulating each message onto a distinct carrier frequency. The multiplexed signal is the sum of all modulated channels. At the receiver, bandpass filters (or tuned filters) isolate each channel; then each isolated carrier is demodulated (coherently multiplied by a synchronized carrier) and low-pass filtered to recover the original baseband.
+
+# __Procedure__:
+
+1 — Imports and parameters
+
+2 — Create message signals and carriers
+
+3 — Modulate each message (standard AM DSB-SC) and form FDM signal
+
+4 — Frequency domain (spectrum) of FDM signal
+
+5 — (Optional) Add AWGN noise to FDM signal
+
+6 — Receiver: isolate each channel with bandpass filter
+
+7 — Demodulate each isolated channel (coherent) and low-pass filter to recover baseband
+
+# __program__:
+```
+Fs = 56300;
+t = 0:1/Fs:0.02;
 
 m1 = sin(2*%pi*200*t);
 m2 = sin(2*%pi*300*t);
@@ -190,8 +115,3 @@ subplot(3,2,6); plot(t,dm6); title("Recovered Signal 6");
 <img width="1920" height="1200" alt="a11 3" src="https://github.com/user-attachments/assets/849eaa56-685c-4a4c-99d1-73bf0d6d26cc" />
 # __Result__:
 The Frequency Division Multiplexing (FDM) technique was successfully implemented using SCILAB. Five different message signals were modulated onto five separate carrier frequencies, combined to form a single FDM composite signal, and then individually recovered using demodulation.
-
-Use Control + Shift + m to toggle the tab key moving focus. Alternatively, use esc then tab to move to the next interactive element on the page.
-No file chosen
-Attach files by dragging & dropping, selecting or pasting them.
-Editing Frequency-Division-Multiplexing---Modulation-and-Demodulation-using-Python/README.md at main · sathish-git-tech/Frequency-Division-Multiplexing---Modulation-and-Demodulation-using-Python
